@@ -1,5 +1,10 @@
 
 {
+  "baseUrl": "https://www.demoblaze.com/",
+  "user": {
+    "username": "kaaviyav",
+    "password": "kaaviyav"
+  },
   "items": [
   {
     "itemName": "Samsung galaxy s6"
@@ -10,6 +15,16 @@
   {
     "itemName": "Nexus 6"
   }
-  ]
+  ],
+  "itemToDelete": "Nokia lumia 1520",
+  "checkout": {
+    "name": "Kaaviya",
+    "country": "India",
+    "city": "Chennai",
+    "card": "1234567890123456",
+    "month": "12",
+    "year": "2028"
+  },
+  "expectedConfirmationMessage": "Thank you for your purchase!"
 }
 

@@ -11,7 +11,7 @@ test('Add multiple products to cart', async ({
   for (const item of testData.items) {
     await productPage.selectProduct(item.itemName);
     await productPage.addSelectedProductToCart();
-    await page.goto('https://www.demoblaze.com/');
+    await page.goto(testData.baseUrl);
   }
 
   await productPage.navigateToCart();

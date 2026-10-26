@@ -17,7 +17,7 @@ test('Checkout and purchase products', async ({
     await productPage.addSelectedProductToCart();
 
     // Return to home page before selecting the next product
-    await page.goto('https://www.demoblaze.com/');
+    await page.goto(testData.baseUrl);
   }
 
   // Step 3: Click the Cart icon
@@ -41,12 +41,12 @@ test('Checkout and purchase products', async ({
 
   // Step 6: Fill order details
   await cartPage.fillOrderDetails(
-    'Kaaviya',
-    'India',
-    'Chennai',
-    '1234567890123456',
-    '12',
-    '2028'
+    testData.checkout.name,
+    testData.checkout.country,
+    testData.checkout.city,
+    testData.checkout.card,
+    testData.checkout.month,
+    testData.checkout.year
   );
 
   // Step 7: Purchase
@@ -55,7 +55,7 @@ test('Checkout and purchase products', async ({
   // Step 8: Verify confirmation
   await expect(cartPage.confirmationMessage).toBeVisible();
   await expect(cartPage.confirmationMessage).toContainText(
-    'Thank you for your purchase!'
+    testData.expectedConfirmationMessage
   );
 
   // Step 9: Close confirmation

@@ -1,4 +1,5 @@
 import { test, expect } from '../lib/fixtures/demoFixture.ts';
+import testData from '../testData/items.json';
 
 test('Delete one product from cart', async ({
   loginPage,
@@ -6,7 +7,7 @@ test('Delete one product from cart', async ({
   productPage,
   page,
 }) => {
-  const itemToDelete = 'Nokia lumia 1520';
+  const itemToDelete = testData.itemToDelete;
 
   await loginPage.navigateToHomePage();
   await productPage.selectProduct(itemToDelete);

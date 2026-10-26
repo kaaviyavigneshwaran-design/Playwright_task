@@ -1,5 +1,6 @@
 
 import { Page, Locator } from '@playwright/test';
+import testData from '../../testData/items.json';
 
 export default class LoginPage {
   readonly page: Page;
@@ -19,7 +20,7 @@ export default class LoginPage {
   }
 
   async navigateToHomePage() {
-    await this.page.goto('https://www.demoblaze.com/');
+    await this.page.goto(testData.baseUrl);
   }
 
   async openLoginModal() {

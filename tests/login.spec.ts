@@ -1,5 +1,6 @@
 
 import { test, expect } from '../lib/fixtures/demoFixture';
+import testData from '../testData/items.json';
 
 test.describe(' Login', () => {
   test('Verify user can login successfully', async ({loginPage,page,}) => {
@@ -7,8 +8,8 @@ test.describe(' Login', () => {
     await loginPage.openLoginModal();
 
     await loginPage.login(
-      'kaaviyav',
-      'kaaviyav'
+      testData.user.username,
+      testData.user.password
     );
 
    await expect(await loginPage.isWelcomeUserDisplayed()).toBeVisible();
